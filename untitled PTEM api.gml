@@ -33,7 +33,10 @@ function new_sprite(_name,  _link, _extension, _speed = 50)
 	sprite_set_speed(global.sprite, _speed, 0)
 }
 
+
+// Down here is testing
+/*
 new_sprite("hi", "https://static.wikia.nocookie.net/pizzatower/images/b/b9/Spr_titlepep_forward_0.png/revision/latest?cb=20230218210231", ".png")
 
 with (obj_player)
-	spr_idle = global.sprite
+	spr_idle = global.sprite*\
