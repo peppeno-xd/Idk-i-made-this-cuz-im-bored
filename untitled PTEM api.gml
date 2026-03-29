@@ -3,9 +3,9 @@ function cobj(xc = 0, yc = 0, step_event_c =@'
 	y += random_range(-1, 1)
 ', persistent_c = false, visible_c = true)
 {
-	var custom_obj = instance_create(xc, yc, obj_custom_object);
+	var CC_custom_obj = instance_create(xc, yc, obj_custom_object);
 	
-	with (custom_obj)
+	with (CC_custom_obj)
 	{
 		step_event = step_event_c;
 		persistent = persistent_c;
@@ -15,15 +15,15 @@ function cobj(xc = 0, yc = 0, step_event_c =@'
 
 function load_gml_file(filename)
 {
-	var _output = ""
+	var _CCoutput = ""
 	if file_exists(filename)
 	{
 		var _file = buffer_load(filename)
 		if buffer_get_size(_file) > 0
-			_output = buffer_read(_file, buffer_string)
+			_CCoutput = buffer_read(_file, buffer_string)
 		buffer_delete(_file); 
 	}
-	return _output
+	return _CCoutput
 }
 
 function shake(_intensityorsum = 1)
@@ -36,7 +36,8 @@ function shake(_intensityorsum = 1)
 function new_sprite(_name,  _link, _extension, _speed = 50)
 {
 	http_get_file(_link, "sprites/" + _name + _extension)
-	global.sprite = sprite_add("sprites/" + _name + _extension, 0, 0, 0, 50, 50)
+    var CCstuff = random_range(1, 99999);
+	global.CCsprite + CCstuff = sprite_add("sprites/" + _name + _extension, 0, 0, 0, 50, 50)
 	sprite_set_speed(global.sprite, _speed, 0)
 }
 *\
@@ -44,8 +45,8 @@ function new_sprite(_name,  _link, _extension, _speed = 50)
 
 // Down here is testing
 /*
-new_sprite("testing webhooks 1234", "https://static.wikia.nocookie.net/pizzatower/images/b/b9/Spr_titlepep_forward_0.png/revision/latest?cb=20230218210231", ".png")
+new_sprite("testing hell 1234", "https://static.wikia.nocookie.net/pizzatower/images/b/b9/Spr_titlepep_forward_0.png/revision/latest?cb=20230218210231", ".png")
 
 with (obj_player)
-	spr_idle = global.sprite
+	spr_idle = global.CCsprite
 *\
