@@ -31,21 +31,19 @@ function shake(_intensityorsum = 1)
 	return x + random_range(_intensityorsum, -_intensityorsum), y + random_range(_intensityorsum, -_intensityorsum)
 }
 
-// This sucks i give up :(
-/*
 function new_sprite(_name,  _link, _extension, _speed = 50)
 {
 	http_get_file(_link, "sprites/" + _name + _extension)
-    var CCstuff = random_range(1, 99999);
-	global.CCsprite + CCstuff = sprite_add("sprites/" + _name + _extension, 0, 0, 0, 50, 50)
+	var CCsprite = sprite_add("sprites/" + _name + _extension, 0, 0, 0, 50, 50)
 	sprite_set_speed(global.sprite, _speed, 0)
+    return CCsprite
 }
-*\
+// Credits to YoyleGateto||Lucy for pointing out that im stupid
 
 
 // Down here is testing
 /*
-new_sprite("testing hell 1234", "https://static.wikia.nocookie.net/pizzatower/images/b/b9/Spr_titlepep_forward_0.png/revision/latest?cb=20230218210231", ".png")
+global.help = new_sprite("testing hell 1234", "https://static.wikia.nocookie.net/pizzatower/images/b/b9/Spr_titlepep_forward_0.png/revision/latest?cb=20230218210231", ".png")
 
 with (obj_player)
 	spr_idle = global.CCsprite
